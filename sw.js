@@ -1,5 +1,5 @@
-/* ClioCon 2026 itinerary service worker, build 63a4cd7d47. Caches only this page, its icons and manifest. */
-const V = 'cliocon-63a4cd7d47';
+/* ClioCon 2026 itinerary service worker, build 64d4c4e02a. Caches only this page, its icons and manifest. */
+const V = 'cliocon-64d4c4e02a';
 const CORE = ['./', 'index.html', 'manifest.webmanifest', 'icons/icon-192.png', 'icons/icon-512.png', 'icons/apple-touch-icon.png', 'icons/maskable-512.png'];
 self.addEventListener('install', (e) => { e.waitUntil(caches.open(V).then((c) => c.addAll(CORE)).then(() => self.skipWaiting())); });
 self.addEventListener('activate', (e) => { e.waitUntil(caches.keys().then((ks) => Promise.all(ks.filter((k) => k.startsWith('cliocon-') && k !== V).map((k) => caches.delete(k)))).then(() => self.clients.claim())); });
